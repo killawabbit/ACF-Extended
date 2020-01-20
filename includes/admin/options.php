@@ -340,7 +340,7 @@ function acfe_options_edit_metabox(){
         }
         
         $fields[] = array(
-            'label'             => __('Value <code style="font-size:11px;float:right; line-height:1.2; margin-top:1px;">' . $type . '</code>', 'acfe'),
+            'label'             => __('Value', 'acfe') . '<code style="font-size:11px;float:right; line-height:1.2; margin-top:1px;">' . $type . '</code>',
             'key'               => 'field_acfe_options_edit_value',
             'name'              => 'field_acfe_options_edit_value',
             'type'              => 'textarea',

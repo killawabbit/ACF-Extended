@@ -148,7 +148,7 @@ class acfe_field_settings{
                     'key'           => 'acfe_settings_settings',
                     'instructions'  => '',
                     'type'          => 'repeater',
-                    'button_label'  => __('+', 'acfe'),
+                    'button_label'  => '+',
                     'required'      => false,
                     'layout'        => 'table',
                     'sub_fields'    => array(

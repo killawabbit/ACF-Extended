@@ -197,7 +197,7 @@ class acfe_field_validation{
                     'key'           => 'acfe_validate_rules_and',
                     'instructions'  => '',
                     'type'          => 'repeater',
-                    'button_label'  => __('+ AND', 'acfe'),
+                    'button_label'  => '+ AND',
                     'required'      => false,
                     'layout'        => 'table',
                     'sub_fields'    => array(

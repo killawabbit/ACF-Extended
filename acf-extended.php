@@ -6,7 +6,6 @@
  * Author:      ACF Extended
  * Author URI:  https://www.acf-extended.com
  * Text Domain: acfe
- * Domain Path: /languages
  */
 
 if(!defined('ABSPATH'))
@@ -92,16 +91,16 @@ class ACFE{
         add_action('acf/init',                  array($this, 'includes'), 99);
         
         // AutoSync
-        add_action('acf/include_fields',        array($this, 'autosync'), 5);
+         add_action('acf/include_fields',        array($this, 'autosync'), 5);
         
         // Fields
-        add_action('acf/include_field_types',   array($this, 'fields'));
+         add_action('acf/include_field_types',   array($this, 'fields'));
         
         // Tools
         add_action('acf/include_admin_tools',   array($this, 'tools'));
         
         // Compatibility
-        acfe_include('includes/core/compatibility.php');
+         acfe_include('includes/core/compatibility.php');
         
     }
     
@@ -274,6 +273,7 @@ function acfe(){
 // Instantiate.
 acfe();
 
+// Init translation
 function acfe_load_plugin_textdomain() {
     load_plugin_textdomain( 'acfe', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
 }

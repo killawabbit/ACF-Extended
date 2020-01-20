@@ -135,7 +135,7 @@ function acfe_render_field_group_settings(){
             'instructions'  => __('Add custom meta data to the field group. Can be retrived using <code>acf_get_field_group()</code>', 'acfe'),
             'prefix'        => 'acf_field_group',
             'type'          => 'repeater',
-            'button_label'  => __('+ Meta', 'acfe'),
+            'button_label'  => '+ Meta',
             'required'      => false,
             'layout'        => 'table',
             'value'         => (isset($field_group['acfe_meta'])) ? $field_group['acfe_meta'] : array(),
