@@ -706,7 +706,7 @@ acf_add_local_field_group (array(
         ),
         array(
             'key' => 'field_acfe_dbt_title',
-            'label' => 'Title',
+            'label' => __('Title', 'acfe'),
             'name' => 'title',
             'type' => 'text',
             'instructions' => __('(String) The display title for your block.', 'acfe'),
