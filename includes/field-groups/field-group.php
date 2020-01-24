@@ -188,7 +188,7 @@ function acfe_render_field_group_settings(){
         
         // Note
         acf_render_field_wrap(array(
-            'label'         => __('Note'),
+            'label'         => __('Note', 'acfe'),
             'name'          => 'acfe_note',
             'prefix'        => 'acf_field_group',
             'type'          => 'textarea',
