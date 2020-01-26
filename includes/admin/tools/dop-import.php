@@ -83,7 +83,7 @@ class ACFE_Admin_Tool_Import_DOP extends ACF_Admin_Tool{
             // Check if already exists
             if(isset($dynamic_options_pages[$options_page_name])){
                 
-                acf_add_admin_notice(__("Options page {$dynamic_options_pages[$options_page_name]['page_title']} already exists. Import aborted.", 'acfe')), 'warning');
+                acf_add_admin_notice(__("Options page {$dynamic_options_pages[$options_page_name]['page_title']} already exists. Import aborted.", 'acfe'), 'warning');
                 continue;
                 
             }
@@ -103,7 +103,7 @@ class ACFE_Admin_Tool_Import_DOP extends ACF_Admin_Tool{
             // Insert error
             if(is_wp_error($post_id)){
                 
-                acf_add_admin_notice(__("Something went wrong with the options page {$title}. Import aborted.", 'acfe')), 'warning');
+                acf_add_admin_notice(__("Something went wrong with the options page {$title}. Import aborted.", 'acfe'), 'warning');
                 continue;
                 
             }

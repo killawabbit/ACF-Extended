@@ -15,7 +15,7 @@ class ACFE_Admin_Tool_Import_DT extends ACF_Admin_Tool{
         
         // vars
         $this->name = 'acfe_tool_dt_import';
-        $this->title = __('Import Taxonomies', 'acfe'). ;
+        $this->title = __('Import Taxonomies', 'acfe');
         $this->icon = 'dashicons-upload';
         
     }
