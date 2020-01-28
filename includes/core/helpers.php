@@ -103,6 +103,19 @@ function the_setting(){
 }
 
 /**
+ * Flexible: the_settings()
+ */
+if(!function_exists('the_settings')){
+    
+function the_settings(){
+    
+    return the_row();
+    
+}
+
+}
+
+/**
  * have_archive()
  */
 if(!function_exists('have_archive')){

@@ -626,7 +626,7 @@ function acfe_flexible_layouts_settings($field){
             'value'         => $acfe_flexible_settings,
             'choices'       => $choices,
             'allow_null'    => 1,
-            'multiple'      => 0,
+            'multiple'      => 1,
             'ui'            => 1,
             'ajax'          => 0,
             'return_format' => 0,
@@ -1087,9 +1087,9 @@ class acfe_field_flexible_content extends acf_field_flexible_content{
         $this->add_field_action('acf/render_field',                                 array($this, 'render_field'), 9);
         
         // General Filters
-        $this->add_filter('acfe/flexible/layouts/icons',             array($this, 'add_layout_icons'), 10, 3);
-        $this->add_filter('acfe/flexible/layouts/div',               array($this, 'add_layout_div'), 10, 3);
-        $this->add_filter('acfe/flexible/layouts/handle',            array($this, 'add_layout_handle'), 10, 3);
+        $this->add_filter('acfe/flexible/layouts/icons',                            array($this, 'add_layout_icons'), 10, 3);
+        $this->add_filter('acfe/flexible/layouts/div',                              array($this, 'add_layout_div'), 10, 3);
+        $this->add_filter('acfe/flexible/layouts/handle',                           array($this, 'add_layout_handle'), 10, 3);
         
         $this->add_filter('acf/load_fields',                                        array($this, 'load_fields'), 10, 2);
         
@@ -1122,32 +1122,26 @@ class acfe_field_flexible_content extends acf_field_flexible_content{
             // Settings
             if($settings_key = acf_maybe_get($layout, 'acfe_flexible_settings')){
                 
-                $field_group = acf_get_field_group($settings_key);
+                $settings_key = acf_get_array($settings_key);
                 
-                if(!empty($field_group)){
-                    
-                    $style = $field_group['label_placement'] === 'left' ? 'row' : 'block';
-                    
-                    acf_add_local_field(array(
-                        'label'                 => false,
-                        'key'                   => 'field_acfe_' . $layout['key'] . '_settings',
-                        'name'                  => 'layout_settings',
-                        'type'                  => 'clone',
-                        'clone'                 => array($settings_key),
-                        'display'               => 'group',
-                        'acfe_seamless_style'   => true,
-                        'layout'                => $style,
-                        'prefix_label'          => 0,
-                        'prefix_name'           => 1,
-                        'parent_layout'         => $layout['key'],
-                        'parent'                => $field['key']
-                    ));
-                    
-                    $clone = acf_get_field('field_acfe_' . $layout['key'] . '_settings');
-                    
-                    array_unshift($fields, $clone);
+                acf_add_local_field(array(
+                    'label'                 => false,
+                    'key'                   => 'field_acfe_' . $layout['key'] . '_settings',
+                    'name'                  => 'layout_settings',
+                    'type'                  => 'clone',
+                    'clone'                 => $settings_key,
+                    'display'               => 'group',
+                    'layout'                => 'row',
+                    'acfe_seamless_style'   => true,
+                    'prefix_label'          => 0,
+                    'prefix_name'           => 1,
+                    'parent_layout'         => $layout['key'],
+                    'parent'                => $field['key']
+                ));
                 
-                }
+                $clone = acf_get_field('field_acfe_' . $layout['key'] . '_settings');
+                
+                array_unshift($fields, $clone);
             
             }
             
