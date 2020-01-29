@@ -2,9 +2,108 @@
  * Flexible: Sortable
  */
 .acf-flexible-content > .values > .ui-sortable-placeholder{
-    height:147px;
+    /*min-height:147px;*/
     border-width:2px;
     border-color:#ccc;
+}
+
+/*
+ * Flexible: Grid
+ */
+
+/*.acf-flexible-content .values.grid::after{
+    clear:both;
+    content:'';
+    display:block;
+}
+*/
+.acf-flexible-content .values.grid,
+.acf-flexible-content .values.grid > .layout{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.acf-flexible-content .values.grid{
+    display: flex;
+    flex-flow: row wrap;
+    align-items:flex-start;
+    margin:0 0 0 -1% !important;
+}
+
+.acf-flexible-content .values.grid.grid-center{
+    justify-content: center;
+}
+
+.acf-flexible-content .values.grid.grid-right{
+    justify-content: flex-end;
+}
+
+.acf-flexible-content .values.grid.grid-space-evenly{
+    justify-content: space-evenly;
+}
+
+.acf-flexible-content .values.grid.grid-space-between{
+    justify-content: space-between;
+}
+
+.acf-flexible-content .values.grid.grid-space-around{
+    justify-content: space-around;
+}
+
+.acf-flexible-content .values.grid > .layout{
+    margin-top:0;
+    margin:0 0 1% 1%;
+}
+
+.acf-flexible-content .values.grid > .layout.col-12{
+    flex:0 0 99%;
+}
+.acf-flexible-content .values.grid > .layout.col-11{
+    flex:0 0 90.666667%;
+}
+.acf-flexible-content .values.grid > .layout.col-10{
+    flex:0 0 82.333333%;
+}
+.acf-flexible-content .values.grid > .layout.col-9{
+    flex:0 0 74%;
+}
+.acf-flexible-content .values.grid > .layout.col-8{
+    flex:0 0 65.666667%;
+}
+.acf-flexible-content .values.grid > .layout.col-7{
+    flex:0 0 57.333333%;
+}
+.acf-flexible-content .values.grid > .layout.col-6{
+    flex:0 0 49%;
+}
+.acf-flexible-content .values.grid > .layout.col-5{
+    flex:0 0 40.666667%;
+}
+.acf-flexible-content .values.grid > .layout.col-4{
+    flex:0 0 32.333333%;
+}
+.acf-flexible-content .values.grid > .layout.col-3{
+    flex:0 0 24%;
+}
+.acf-flexible-content .values.grid > .layout.col-2{
+    flex:0 0 15.666667%;
+}
+.acf-flexible-content .values.grid > .layout.col-1{
+    flex:0 0 7.333333%;
+}
+
+.acf-flexible-content .values.grid > .layout.col-auto{
+    flex: 1;
+}
+
+.acfe-flexible-stylised-button.disabled{
+    display:none;
+}
+
+.acf-fc-popup a.active {
+    background: #0073aa;
+    color: #fff;
 }
 
 /*

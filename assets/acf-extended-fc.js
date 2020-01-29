@@ -278,6 +278,164 @@
             };
             
         }
+        
+        // Flexible: Grid
+        if(flexible.has('acfeFlexibleGrid')){
+            
+            flexible.getPopupHTML = function(){
+                
+                // vars
+                var html = this.$popup().html();
+                var $html = $(html);
+                
+                // count layouts
+                var $layouts = this.$layouts();
+                var countLayouts = function( name ){
+                    return $layouts.filter(function(){
+                        return $(this).data('layout') === name;
+                    }).length;
+                };
+                
+                var model = this;
+                            
+                // modify popup
+                $html.find('[data-layout]').each(function(){
+                    
+                    // vars
+                    var $a = $(this);
+                    var min = $a.data('min') || 0;
+                    var max = $a.data('max') || 0;
+                    var name = $a.data('layout') || '';
+                    var count = countLayouts( name );
+                    
+                    // max
+                    if( max && count >= max) {
+                        $a.addClass('disabled');
+                        return;
+                    }
+                    
+                    if(model.get('acfeFlexibleGridWrap')){
+                        
+                        var col = $a.data('col');
+                        
+                        if(col === 'auto')
+                            col = 1;
+                        
+                        if(model.countCols() + parseInt(col) > 12){
+                            
+                            $a.addClass('disabled');
+                            return;
+                            
+                        }
+                        
+                    }
+                    
+                    // min
+                    if( min && count < min ) {
+                        
+                        // vars
+                        var required = min - count;
+                        var title = acf.__('{required} {label} {identifier} required (min {min})');
+                        var identifier = acf._n('layout', 'layouts', required);
+                                            
+                        // translate
+                        title = title.replace('{required}', required);
+                        title = title.replace('{label}', name); // 5.5.0
+                        title = title.replace('{identifier}', identifier);
+                        title = title.replace('{min}', min);
+                        
+                        // badge
+                        $a.append('<span class="badge" title="' + title + '">' + required + '</span>');
+                    }
+                });
+                
+                // update
+                html = $html.outerHTML();
+                
+                // return
+                return html;
+            };
+            
+            flexible.countCols = function(){
+                
+                var count = 0;
+                
+                this.$layouts().each(function(){
+                    
+                    var col = $(this).data('col');
+
+                    if(col === 'auto')
+                        col = 1;
+                    
+                    count = count + col;
+                    
+                });
+                
+                return count;
+                
+            };
+            
+            flexible.isFull = function(){
+                
+                if(this.get('acfeFlexibleGridWrap') && this.countCols() >= 12)
+                    return true;
+                
+                var max = parseInt( this.get('max') );
+                return ( max && this.val() >= max );
+            };
+            
+            flexible.render = function(){
+                
+                // update order number
+                this.$layouts().each(function( i ){
+                    $(this).find('.acf-fc-layout-order:first').html( i+1 );
+                });
+                
+                // empty
+                if( this.val() == 0 ) {
+                    this.$control().addClass('-empty');
+                } else {
+                    this.$control().removeClass('-empty');
+                }
+                
+                // max
+                if( this.isFull() ) {
+                    this.$button().addClass('disabled');
+                    this.$control().find('> .acfe-flexible-stylised-button:first').addClass('disabled');
+                } else {
+                    this.$button().removeClass('disabled');
+                    this.$control().find('> .acfe-flexible-stylised-button:first').removeClass('disabled');
+                }
+            };
+            
+            flexible.addSortable = function( self ){
+                
+                // bail early if max 1 row
+                if( this.get('max') == 1 ) {
+                    return;
+                }
+                
+                // add sortable
+                this.$layoutsWrap().sortable({
+                    items: ' > .layout',
+                    handle: '> .acf-fc-layout-handle',
+                    forceHelperSize: false,
+                    tolerance: "pointer",
+                    forcePlaceholderSize: true,
+                    scroll: false,
+                    stop: function(event, ui) {
+                        self.render();
+                    },
+                    update: function(event, ui) {
+                        self.$input().trigger('change');
+                    }
+                });
+                
+            };
+            
+        }
+        
+        
 
     });
     

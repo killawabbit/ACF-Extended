@@ -435,6 +435,91 @@
         
     }
     
+    // Flexible: Resize
+    model.events['click [data-acfe-flexible-grid-col]'] = 'acfeGridCol';
+    model.acfeGridCol = function(e, $el){
+        
+        // Get Flexible
+        var flexible = this;
+        
+        // Vars
+        var $layout = $el.closest('.layout');
+
+        var html = flexible.$('.tmpl-acfe-flexible-grid-popup:last').html();
+        var $html = $(html);
+        
+        var real_col = $layout.data('col');
+        var current_col = $layout.data('col');
+        
+        if(current_col === 'auto')
+            current_col = 1;
+        
+        $html.find('a').each(function(){
+            
+            var $a = $(this);
+            
+            var col = $a.data('col');
+            
+            if(col === real_col)
+                $a.addClass('active');
+            
+            if(col === 'auto')
+                col = 1;
+            
+            if(flexible.countCols() - current_col + parseInt(col) > 12){
+                
+                $a.addClass('disabled');
+                return;
+                
+            }
+            
+        });
+        
+        html = $html.outerHTML();
+        
+        // Init Popup
+        var Popup = acf.models.TooltipConfirm.extend({
+            render: function(){
+                this.html(this.get('text'));
+                this.$el.addClass('acf-fc-popup');
+            }
+        });
+        
+        // New Popup
+        var popup = new Popup({
+            target: $el,
+            targetConfirm: false,
+            text: html,
+            context: flexible,
+            confirm: function(e, $el){
+                
+                var col_old = $layout.data('col');
+                var col_new = $el.data('col');
+                
+                $layout.data('col', col_new);
+                $layout.removeClass('col-' + col_old).addClass('col-' + col_new);
+                
+                flexible.render();
+                
+                var input = acf.getFields({
+                    'name': 'acfe_flexible_column',
+                    'parent': $layout,
+                    'limit': 1
+                });
+                
+                // Update input
+                $.each(input, function(){
+                    this.setValue(col_new);
+                    this.trigger('change');
+                });
+                
+            }
+        });
+        
+        popup.on('click', 'a', 'onConfirm');
+        
+    }
+    
     // Flexible: Duplicate
     model.acfeDuplicate = function(args){
         
