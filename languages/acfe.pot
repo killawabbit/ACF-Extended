@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Advanced Custom Fields: Extended\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-20 19:10+0000\n"
+"POT-Creation-Date: 2020-01-27 10:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -19,7 +19,7 @@ msgstr ""
 msgid "ACF Extended requires Advanced Custom Fields PRO (minimum: 5.7.10)."
 msgstr ""
 
-#: includes/core/enqueue.php:94
+#: includes/core/enqueue.php:94 includes/fields/field-flexible-content.php:1828
 msgid "Close"
 msgstr ""
 
@@ -72,6 +72,10 @@ msgstr ""
 
 #: includes/field-groups/field-group.php:182
 msgid "View raw field group data, for development use"
+msgstr ""
+
+#: includes/field-groups/field-group.php:191
+msgid "Note"
 msgstr ""
 
 #: includes/field-groups/field-group.php:195
@@ -146,6 +150,7 @@ msgid "Json sync"
 msgstr ""
 
 #: includes/field-groups/field-groups.php:69
+#: includes/modules/dynamic-block-type.php:709
 msgid "Title"
 msgstr ""
 
@@ -225,13 +230,13 @@ msgstr ""
 
 #: includes/field-groups/field-group-category.php:41
 #: includes/field-groups/field-group-category.php:63
-#: includes/fields/field-flexible-content.php:292
+#: includes/fields/field-flexible-content.php:334
 msgid "Categories"
 msgstr ""
 
 #: includes/admin/settings.php:12 includes/admin/settings.php:24
 #: includes/admin/settings.php:29 includes/fields-settings/settings.php:146
-#: includes/fields/field-flexible-content.php:375
+#: includes/fields/field-flexible-content.php:418
 msgid "Settings"
 msgstr ""
 
@@ -841,6 +846,10 @@ msgstr ""
 msgid "Archive"
 msgstr ""
 
+#: includes/locations/post-type-archive.php:85
+msgid "Post Type Archive"
+msgstr ""
+
 #: includes/locations/taxonomy-list.php:367 includes/fields/field-forms.php:13
 #: includes/modules/form/admin.php:102 includes/modules/form/admin.php:103
 #: includes/modules/form/admin.php:105 includes/modules/form/admin.php:107
@@ -1301,7 +1310,7 @@ msgid "Stylised Button"
 msgstr ""
 
 #: includes/fields/field-flexible-content.php:17
-msgid "Better layouts button integration"
+msgid "Better actions buttons integration"
 msgstr ""
 
 #: includes/fields/field-flexible-content.php:28
@@ -1335,125 +1344,193 @@ msgid ""
 msgstr ""
 
 #: includes/fields/field-flexible-content.php:89
-msgid "Layouts: Render"
+msgid "Layouts: Settings"
 msgstr ""
 
 #: includes/fields/field-flexible-content.php:92
+msgid "Choose a field group to clone and to be used as a configuration modal"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:103
+msgid "Layouts: Asynchronous"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:106
+msgid ""
+"Add layouts using Ajax method. This setting increase performance on complex "
+"Flexible Content"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:117
+msgid "Layouts: Render"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:120
 msgid ""
 "Set template, style & javascript files for each layouts. This setting is "
 "mandatory in order to use <code style=\"font-size:11px;\">get_flexible()"
 "</code> function. You must save the field group to apply this setting"
 msgstr ""
 
-#: includes/fields/field-flexible-content.php:103
+#: includes/fields/field-flexible-content.php:131
 msgid "Layouts: Dynamic Preview"
 msgstr ""
 
-#: includes/fields/field-flexible-content.php:106
+#: includes/fields/field-flexible-content.php:134
 msgid ""
 "Use layouts render settings to display a dynamic preview in the post "
 "administration"
 msgstr ""
 
-#: includes/fields/field-flexible-content.php:126
+#: includes/fields/field-flexible-content.php:154
 msgid "Layouts: Placeholder"
 msgstr ""
 
-#: includes/fields/field-flexible-content.php:129
+#: includes/fields/field-flexible-content.php:157
 msgid "Display a placeholder with a pencil icon, making edition easier"
 msgstr ""
 
-#: includes/fields/field-flexible-content.php:149
-msgid "Layouts: Close Button"
-msgstr ""
-
-#: includes/fields/field-flexible-content.php:152
-msgid "Display a close button to collapse the layout"
-msgstr ""
-
-#: includes/fields/field-flexible-content.php:163
-msgid "Layouts: Title Edition"
-msgstr ""
-
-#: includes/fields/field-flexible-content.php:166
-msgid "Allow layout title edition"
-msgstr ""
-
 #: includes/fields/field-flexible-content.php:177
-msgid "Layouts: Copy/Paste"
+msgid "Disable Legacy Layout Title Ajax"
 msgstr ""
 
 #: includes/fields/field-flexible-content.php:180
-msgid "Allow copy/paste layouts functions"
+msgid ""
+"Disable the additional ACF Layout Title Ajax call. If you don't perform "
+"operations using <code>acf/fields/flexible_content/layout_title</code> you "
+"can turn this setting on. <br /><br />More informations can be found on the "
+"<a href=\"https://www.advancedcustomfields.com/resources/acf-fields-"
+"flexible_content-layout_title/\" target=\"_blank\">ACF documentation</a>."
 msgstr ""
 
 #: includes/fields/field-flexible-content.php:191
-msgid "Layouts Modal: Edition"
+msgid "Layouts: Close Button"
 msgstr ""
 
 #: includes/fields/field-flexible-content.php:194
-msgid "Edit layout content in a modal"
+msgid "Display a close button to collapse the layout"
 msgstr ""
 
 #: includes/fields/field-flexible-content.php:205
-msgid "Layouts Modal: Selection"
+msgid "Layouts: Title Edition"
 msgstr ""
 
 #: includes/fields/field-flexible-content.php:208
-msgid "Select layouts in a modal"
+msgid "Allow layout title edition"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:219
+msgid "Layouts: Copy/Paste"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:222
+msgid "Allow copy/paste layouts functions"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:233
+msgid "Layouts Modal: Edition"
 msgstr ""
 
 #: includes/fields/field-flexible-content.php:236
+msgid "Edit layout content in a modal"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:247
+msgid "Layouts Modal: Selection"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:250
+msgid "Select layouts in a modal"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:278
 msgid "Modal Title"
 msgstr ""
 
-#: includes/fields/field-flexible-content.php:237
-msgid "Add Row"
-msgstr ""
-
-#: includes/fields/field-flexible-content.php:315
+#: includes/fields/field-flexible-content.php:357
 msgid "Layouts: Force State"
 msgstr ""
 
-#: includes/fields/field-flexible-content.php:318
+#: includes/fields/field-flexible-content.php:360
 msgid "Force layouts to be collapsed or opened"
 msgstr ""
 
-#: includes/fields/field-flexible-content.php:338
+#: includes/fields/field-flexible-content.php:362
+msgid "Default"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:381
 msgid "Layouts: Remove Collapse"
 msgstr ""
 
-#: includes/fields/field-flexible-content.php:341
+#: includes/fields/field-flexible-content.php:384
 msgid "Remove collapse action"
 msgstr ""
 
-#: includes/fields/field-flexible-content.php:412
+#: includes/fields/field-flexible-content.php:456
 #: includes/modules/dynamic-block-type.php:390
 #: includes/modules/dynamic-block-type.php:779
 msgid "Category"
 msgstr ""
 
-#: includes/fields/field-flexible-content.php:418
+#: includes/fields/field-flexible-content.php:462
 msgid "Multiple categories can be set using \"|\""
 msgstr ""
 
-#: includes/fields/field-flexible-content.php:447
+#: includes/fields/field-flexible-content.php:491
 #: includes/modules/dynamic-block-type.php:392
 #: includes/modules/dynamic-block-type.php:1066
 msgid "Render"
 msgstr ""
 
-#: includes/fields/field-flexible-content.php:528
+#: includes/fields/field-flexible-content.php:572
 msgid "Thumbnail"
 msgstr ""
 
-#: includes/fields/field-flexible-content.php:833
+#: includes/fields/field-flexible-content.php:621
+msgid "Configuration modal"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:904
 #: includes/fields/field-taxonomy-terms.php:632
 #: includes/fields/field-post-statuses.php:267
 #: includes/fields/field-forms.php:267 includes/fields/field-user-roles.php:253
 #: includes/fields/field-post-types.php:267
 #: includes/fields/field-taxonomies.php:267
 msgid "Layout"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:1253
+#, php-format
+msgid "Click the \"%s\" button below to start creating your layout"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:1335
+msgid "Copy layouts"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:1336
+msgid "Paste layouts"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:1507
+msgid "Drag to reorder"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:1531
+msgid "Add layout"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:1532
+msgid "Remove layout"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:1533
+msgid "Click to toggle"
+msgstr ""
+
+#: includes/fields/field-flexible-content.php:1613
+msgid "Edit layout"
 msgstr ""
 
 #: includes/fields/field-taxonomy-terms.php:16
@@ -3213,6 +3290,14 @@ msgstr ""
 msgid "(string) The message shown above the form on submit."
 msgstr ""
 
+#: includes/modules/single-meta.php:309
+msgid "Save as meta"
+msgstr ""
+
+#: includes/modules/single-meta.php:312
+msgid "Save the field an individual meta (useful for WP_Query)."
+msgstr ""
+
 #: includes/modules/author.php:85
 msgid "Author"
 msgstr ""
@@ -4248,6 +4333,10 @@ msgstr ""
 
 #: includes/modules/form/actions/user.php:547
 msgid "Nicename may not be longer than 50 characters."
+msgstr ""
+
+#. Name of the plugin
+msgid "Advanced Custom Fields: Extended"
 msgstr ""
 
 #. Description of the plugin
