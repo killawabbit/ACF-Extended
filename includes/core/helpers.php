@@ -866,3 +866,182 @@ function acfe_number_suffix($num){
     return $num . 'th';
     
 }
+
+function acfe_get_locations_array($locations){
+    
+    $return = array();
+    $types = acf_get_location_rule_types();
+    
+    if(!$locations || !$types)
+        return $return;
+    
+    $icon_default = 'admin-generic';
+        
+    $icons = array(
+        'edit' => array(
+            'post_type',
+            'post_template',
+            'post_status',
+            'post_format',
+            'post',
+        ),
+        'media-default' => array(
+            'page_template',
+            'page_type',
+            'page_parent',
+            'page',
+        ),
+        'admin-users' => array(
+            'current_user',
+            'user_form',
+        ),
+        'welcome-widgets-menus' => array(
+            'widget',
+            'nav_menu',
+            'nav_menu_item',
+        ),
+        'category' => array(
+            'taxonomy',
+            'post_category',
+            'post_taxonomy',
+        ),
+        'admin-comments' => array(
+            'comment',
+        ),
+        'paperclip' => array(
+            'attachment',
+        ),
+        'admin-settings' => array(
+            'options_page',
+        ),
+        'businessman' => array(
+            'current_user_role',
+            'user_role',
+        ),
+        'admin-appearance' => array(
+            'acfe_template'
+        )
+    );
+    
+    $rules = array();
+    
+    foreach($types as $key => $type){
+        
+        foreach($type as $slug => $name){
+            
+            $icon = $icon_default;
+            
+            foreach($icons as $_icon => $icon_slugs){
+                
+                if(!in_array($slug, $icon_slugs))
+                    continue;
+                
+                $icon = $_icon;
+                break;
+                
+            }
+            
+            $rules[$slug] = array(
+                'name'  => $slug,
+                'label' => $name,
+                'icon'  => $icon
+            );
+            
+        }
+        
+    }
+    
+    foreach($locations as $group){
+        
+        if(!acf_maybe_get($rules, $group['param']) || !acf_maybe_get($group, 'value'))
+            continue;
+        
+        // init
+        $rule = $rules[$group['param']];
+        
+        // vars
+        $icon = $rule['icon'];
+        $name = $rule['name'];
+        $label = $rule['label'];
+        $operator = $group['operator'] === '==' ? '=' : $group['operator'];
+        $value = $group['value'];
+        
+        // Validate value
+        $values = acf_get_location_rule_values($group);
+        
+        if(!empty($values) && is_array($values)){
+            
+            foreach($values as $value_slug => $value_name){
+                
+                if($value != $value_slug)
+                    continue;
+                
+                $value = $value_name;
+                
+                if(is_array($value_name) && isset($value_name[$value])){
+                    
+                    $value = $value_name[$value];
+                    
+                }
+                
+                break;
+                
+            }
+            
+        }
+        
+        // html
+        $title = $label . ' ' . $operator . ' ' . $value;
+        
+        $atts = array(
+            'class' => 'acf-js-tooltip dashicons dashicons-' . $icon,
+            'title' => $title
+        );
+        
+        if($operator === '!='){
+            
+            $atts['style'] = 'color: #ccc;';
+            
+        }
+        
+        $html = '<span ' . acf_esc_attr($atts) . '></span>';
+        
+        $return[] = array(
+            'html'              => $html,
+            'icon'              => $icon,
+            'title'             => $title,
+            'name'              => $name,
+            'label'             => $label,
+            'operator'          => $operator,
+            'value'             => $value,
+        );
+        
+    }
+    
+    return $return;
+    
+}
+
+function acfe_render_field_group_locations_html($field_group){
+    
+    foreach($field_group['location'] as $groups){
+        
+        $html = acfe_get_locations_array($groups);
+        
+        if($html){
+            
+            $array = array();
+            
+            foreach($html as $location){
+                
+                $array[] = $location['html'];
+                
+            }
+            
+            echo implode(' ', $array);
+            
+        }
+        
+    }
+    
+}

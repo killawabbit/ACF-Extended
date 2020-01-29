@@ -72,10 +72,18 @@ function acfe_admin_settings_submenu_swap(){
             
         }
         
+        // Templates
+        elseif($item[2] === 'edit.php?post_type=acfe-template'){
+            
+            $array[7] = $item;
+            unset($_submenu[$k]);
+            
+        }
+        
         // Tools
         elseif($item[2] === 'acf-tools'){
             
-            $array[7] = $item;
+            $array[8] = $item;
             unset($_submenu[$k]);
             
         }
@@ -83,7 +91,7 @@ function acfe_admin_settings_submenu_swap(){
         // Updates
         elseif($item[2] === 'acf-settings-updates'){
             
-            $array[8] = $item;
+            $array[9] = $item;
             unset($_submenu[$k]);
             
         }
