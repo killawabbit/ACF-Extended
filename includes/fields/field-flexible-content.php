@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <?php
 
 if(!defined('ABSPATH'))
@@ -2969,4 +2968,3 @@ class acfe_field_flexible_content extends acf_field_flexible_content{
 acf_register_field_type('acfe_field_flexible_content');
 
 endif;
->>>>>>> Stashed changes
