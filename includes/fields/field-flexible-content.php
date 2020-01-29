@@ -1366,6 +1366,16 @@ class acfe_field_flexible_content extends acf_field_flexible_content{
     
     function render_field($field){
         
+        $field = apply_filters('acfe/flexible/before_render', $field);
+        $field = apply_filters('acfe/flexible/before_render/type=flexible_content', $field);
+        $field = apply_filters('acfe/flexible/before_render/name=' . $field['_name'], $field);
+        $field = apply_filters('acfe/flexible/before_render/key=' . $field['key'], $field);
+        
+        if($field === false)
+            return;
+        
+        acf_enqueue_uploader();
+        
         // settings
         $stylised_button = acf_maybe_get($field, 'acfe_flexible_stylised_button');
         $copy_paste = acf_maybe_get($field, 'acfe_flexible_copy_paste');
