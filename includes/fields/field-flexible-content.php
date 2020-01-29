@@ -1679,6 +1679,27 @@ class acfe_field_flexible_content extends acf_field_flexible_content{
                 
             }
             
+            elseif($sub_fields[1]['name'] === 'acfe_flexible_column'){
+                
+                $column = $sub_fields[1];
+                
+                // add value
+                if( isset($value[ $column['key'] ]) ) {
+                    
+                    // this is a normal value
+                    $column['value'] = $value[ $column['key'] ];
+                    
+                } elseif( isset($column['default_value']) ) {
+                    
+                    // no value, but this sub field has a default value
+                    $column['value'] = $column['default_value'];
+                    
+                }
+                
+                $col = $column['value'];
+                
+            }
+            
             $div['class'] .= ' col-' . $col;
             $div['data-col'] = $col;
             
