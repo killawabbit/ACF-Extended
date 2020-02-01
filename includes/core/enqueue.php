@@ -91,7 +91,7 @@ function acfe_enqueue_admin_input_scripts(){
     wp_enqueue_script('acf-extended-fc-modal-edit', acfe_get_url('assets/acf-extended-fc-modal-edit.js'), array('jquery'), ACFE_VERSION);
     
     acf_localize_text(array(
-        'Close'	=> __('Close', 'acf'),
+        'Close'	=> __('Close', 'acfe'),
     ));
     
 }

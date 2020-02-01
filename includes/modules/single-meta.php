@@ -306,10 +306,10 @@ class acfe_single_meta{
         
         // Settings
         acf_render_field_setting($field, array(
-            'label'             => __('Save as meta'),
+            'label'             => __('Save as meta', 'acfe'),
             'key'               => 'acfe_save_meta',
             'name'              => 'acfe_save_meta',
-            'instructions'      => __('Save the field an individual meta (useful for WP_Query).'),
+            'instructions'      => __('Save the field an individual meta (useful for WP_Query).', 'acfe'),
             'type'              => 'true_false',
             'required'          => false,
             'conditional_logic' => false,

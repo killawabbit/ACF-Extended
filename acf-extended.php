@@ -277,4 +277,11 @@ function acfe(){
 // Instantiate.
 acfe();
 
+// Init translation
+function acfe_load_plugin_textdomain() {
+    load_plugin_textdomain( 'acfe', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+}
+add_action( 'plugins_loaded', 'acfe_load_plugin_textdomain' );
+
+
 endif;

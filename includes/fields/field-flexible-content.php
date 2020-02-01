@@ -11,10 +11,10 @@ function acfe_flexible_settings($field){
     
     // Stylised button
     acf_render_field_setting($field, array(
-        'label'         => __('Stylised Button'),
+        'label'         => __('Stylised Button', 'acfe'),
         'name'          => 'acfe_flexible_stylised_button',
         'key'           => 'acfe_flexible_stylised_button',
-        'instructions'  => __('Better actions buttons integration'),
+        'instructions'  => __('Better actions buttons integration', 'acfe'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -25,10 +25,10 @@ function acfe_flexible_settings($field){
     
     // Hide Empty Message
     acf_render_field_setting($field, array(
-        'label'         => __('Hide Empty Message'),
+        'label'         => __('Hide Empty Message', 'acfe'),
         'name'          => 'acfe_flexible_hide_empty_message',
         'key'           => 'acfe_flexible_hide_empty_message',
-        'instructions'  => __('Hide the empty message box'),
+        'instructions'  => __('Hide the empty message box', 'acfe'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -48,12 +48,12 @@ function acfe_flexible_settings($field){
     
     // Empty Message
     acf_render_field_setting($field, array(
-        'label'         => __('Empty Message'),
+        'label'         => __('Empty Message', 'acfe'),
         'name'          => 'acfe_flexible_empty_message',
         'key'           => 'acfe_flexible_empty_message',
-        'instructions'  => __('Text displayed when the flexible field is empty'),
+        'instructions'  => __('Text displayed when the flexible field is empty', 'acfe'),
         'type'          => 'text',
-        'placeholder'   => __('Click the "Add Row" button below to start creating your layout'),
+        'placeholder'   => __('Click the "Add Row" button below to start creating your layout', 'acfe'),
         'conditional_logic' => array(
             array(
                 array(
@@ -72,10 +72,10 @@ function acfe_flexible_settings($field){
     
     // Layouts thumbnails
     acf_render_field_setting($field, array(
-        'label'         => __('Layouts: Thumbnails'),
+        'label'         => __('Layouts: Thumbnails', 'acfe'),
         'name'          => 'acfe_flexible_layouts_thumbnails',
         'key'           => 'acfe_flexible_layouts_thumbnails',
-        'instructions'  => __('Set a thumbnail for each layouts. You must save the field group to apply this setting'),
+        'instructions'  => __('Set a thumbnail for each layouts. You must save the field group to apply this setting', 'acfe'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -155,10 +155,10 @@ function acfe_flexible_settings($field){
     
     // Layouts settings
     acf_render_field_setting($field, array(
-        'label'         => __('Layouts: Settings'),
+        'label'         => __('Layouts: Settings', 'acfe'),
         'name'          => 'acfe_flexible_layouts_settings',
         'key'           => 'acfe_flexible_layouts_settings',
-        'instructions'  => __('Choose a field group to clone and to be used as a configuration modal'),
+        'instructions'  => __('Choose a field group to clone and to be used as a configuration modal', 'acfe'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -169,10 +169,10 @@ function acfe_flexible_settings($field){
     
     // Layouts ajax
     acf_render_field_setting($field, array(
-        'label'         => __('Layouts: Asynchronous'),
+        'label'         => __('Layouts: Asynchronous', 'acfe'),
         'name'          => 'acfe_flexible_layouts_ajax',
         'key'           => 'acfe_flexible_layouts_ajax',
-        'instructions'  => __('Add layouts using Ajax method. This setting increase performance on complex Flexible Content'),
+        'instructions'  => __('Add layouts using Ajax method. This setting increase performance on complex Flexible Content', 'acfe'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -183,10 +183,10 @@ function acfe_flexible_settings($field){
     
     // Layouts: Render
     acf_render_field_setting($field, array(
-        'label'         => __('Layouts: Render'),
+        'label'         => __('Layouts: Render', 'acfe'),
         'name'          => 'acfe_flexible_layouts_templates',
         'key'           => 'acfe_flexible_layouts_templates',
-        'instructions'  => __('Set template, style & javascript files for each layouts. This setting is mandatory in order to use <code style="font-size:11px;">get_flexible()</code> function. You must save the field group to apply this setting'),
+        'instructions'  => __('Set template, style & javascript files for each layouts. This setting is mandatory in order to use <code style="font-size:11px;">get_flexible()</code> function. You must save the field group to apply this setting', 'acfe'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -197,10 +197,10 @@ function acfe_flexible_settings($field){
     
     // Layouts: Preview
     acf_render_field_setting($field, array(
-        'label'         => __('Layouts: Dynamic Preview'),
+        'label'         => __('Layouts: Dynamic Preview', 'acfe'),
         'name'          => 'acfe_flexible_layouts_previews',
         'key'           => 'acfe_flexible_layouts_previews',
-        'instructions'  => __('Use layouts render settings to display a dynamic preview in the post administration'),
+        'instructions'  => __('Use layouts render settings to display a dynamic preview in the post administration', 'acfe'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -220,10 +220,10 @@ function acfe_flexible_settings($field){
     
     // Layouts: Placholder
     acf_render_field_setting($field, array(
-        'label'         => __('Layouts: Placeholder'),
+        'label'         => __('Layouts: Placeholder', 'acfe'),
         'name'          => 'acfe_flexible_layouts_placeholder',
         'key'           => 'acfe_flexible_layouts_placeholder',
-        'instructions'  => __('Display a placeholder with a pencil icon, making edition easier'),
+        'instructions'  => __('Display a placeholder with a pencil icon, making edition easier', 'acfe'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -243,10 +243,10 @@ function acfe_flexible_settings($field){
     
     // Disable Legacy Title Ajax
     acf_render_field_setting($field, array(
-        'label'         => __('Disable Legacy Layout Title Ajax'),
+        'label'         => __('Disable Legacy Layout Title Ajax', 'acfe'),
         'name'          => 'acfe_flexible_disable_ajax_title',
         'key'           => 'acfe_flexible_disable_ajax_title',
-        'instructions'  => __('Disable the additional ACF Layout Title Ajax call. If you don\'t perform operations using <code>acf/fields/flexible_content/layout_title</code> you can turn this setting on. <br /><br />More informations can be found on the <a href="https://www.advancedcustomfields.com/resources/acf-fields-flexible_content-layout_title/" target="_blank">ACF documentation</a>.'),
+        'instructions'  => __('Disable the additional ACF Layout Title Ajax call. If you don\'t perform operations using <code>acf/fields/flexible_content/layout_title</code> you can turn this setting on. <br /><br />More informations can be found on the <a href="https://www.advancedcustomfields.com/resources/acf-fields-flexible_content-layout_title/" target="_blank">ACF documentation</a>.', 'acfe'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -257,10 +257,10 @@ function acfe_flexible_settings($field){
     
     // Layouts: Close Button
     acf_render_field_setting($field, array(
-        'label'         => __('Layouts: Close Button'),
+        'label'         => __('Layouts: Close Button', 'acfe'),
         'name'          => 'acfe_flexible_close_button',
         'key'           => 'acfe_flexible_close_button',
-        'instructions'  => __('Display a close button to collapse the layout'),
+        'instructions'  => __('Display a close button to collapse the layout', 'acfe'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -271,10 +271,10 @@ function acfe_flexible_settings($field){
     
     // Layouts: Title Edition
     acf_render_field_setting($field, array(
-        'label'         => __('Layouts: Title Edition'),
+        'label'         => __('Layouts: Title Edition', 'acfe'),
         'name'          => 'acfe_flexible_title_edition',
         'key'           => 'acfe_flexible_title_edition',
-        'instructions'  => __('Allow layout title edition'),
+        'instructions'  => __('Allow layout title edition', 'acfe'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -285,10 +285,10 @@ function acfe_flexible_settings($field){
     
     // Layouts: Copy/Paste
     acf_render_field_setting($field, array(
-        'label'         => __('Layouts: Copy/Paste'),
+        'label'         => __('Layouts: Copy/Paste', 'acfe'),
         'name'          => 'acfe_flexible_copy_paste',
         'key'           => 'acfe_flexible_copy_paste',
-        'instructions'  => __('Allow copy/paste layouts functions'),
+        'instructions'  => __('Allow copy/paste layouts functions', 'acfe'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -299,10 +299,10 @@ function acfe_flexible_settings($field){
     
     // Modal: Edition
     acf_render_field_setting($field, array(
-        'label'         => __('Layouts Modal: Edition'),
+        'label'         => __('Layouts Modal: Edition', 'acfe'),
         'name'          => 'acfe_flexible_modal_edition',
         'key'           => 'acfe_flexible_modal_edition',
-        'instructions'  => __('Edit layout content in a modal'),
+        'instructions'  => __('Edit layout content in a modal', 'acfe'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -313,10 +313,10 @@ function acfe_flexible_settings($field){
     
     // Modal: Selection
     acf_render_field_setting($field, array(
-        'label'         => __('Layouts Modal: Selection'),
+        'label'         => __('Layouts Modal: Selection', 'acfe'),
         'name'          => 'acfe_flexible_modal',
         'key'           => 'acfe_flexible_modal',
-        'instructions'  => __('Select layouts in a modal'),
+        'instructions'  => __('Select layouts in a modal', 'acfe'),
         'type'          => 'group',
         'layout'        => 'block',
         'sub_fields'    => array(
@@ -344,7 +344,7 @@ function acfe_flexible_settings($field){
                 'name'          => 'acfe_flexible_modal_title',
                 'key'           => 'acfe_flexible_modal_title',
                 'type'          => 'text',
-                'prepend'       => __('Modal Title'),
+                'prepend'       => __('Modal Title', 'acfe'),
                 'placeholder'   => 'Add Row',
                 'instructions'  => false,
                 'required'      => false,
@@ -400,7 +400,7 @@ function acfe_flexible_settings($field){
                 'name'          => 'acfe_flexible_modal_categories',
                 'key'           => 'acfe_flexible_modal_categories',
                 'type'          => 'true_false',
-                'message'       => __('Categories'),
+                'message'       => __('Categories', 'acfe'),
                 'instructions'  => false,
                 'required'      => false,
                 'wrapper'       => array(
@@ -423,10 +423,10 @@ function acfe_flexible_settings($field){
     
     // Layouts: Force State
     acf_render_field_setting($field, array(
-        'label'         => __('Layouts: Force State'),
+        'label'         => __('Layouts: Force State', 'acfe'),
         'name'          => 'acfe_flexible_layouts_state',
         'key'           => 'acfe_flexible_layouts_state',
-        'instructions'  => __('Force layouts to be collapsed or opened'),
+        'instructions'  => __('Force layouts to be collapsed or opened', 'acfe'),
         'type'          => 'select',
         'placeholder'   => __('Default', 'acfe'),
         'allow_null'    => true,
@@ -447,10 +447,10 @@ function acfe_flexible_settings($field){
     
     // Layouts: Remove Collapse
     acf_render_field_setting($field, array(
-        'label'         => __('Layouts: Remove Collapse'),
+        'label'         => __('Layouts: Remove Collapse', 'acfe'),
         'name'          => 'acfe_flexible_layouts_remove_collapse',
         'key'           => 'acfe_flexible_layouts_remove_collapse',
-        'instructions'  => __('Remove collapse action'),
+        'instructions'  => __('Remove collapse action', 'acfe'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -484,7 +484,7 @@ function acfe_flexible_layouts_settings_before($field){
     echo '</li>';
     
     acf_render_field_wrap(array(
-        'label' => __('Settings'),
+        'label' => __('Settings', 'acfe'),
         'type'  => 'hidden',
         'name'  => 'acfe_flexible_settings_label'
     ), 'ul');
@@ -578,13 +578,13 @@ function acfe_flexible_layouts_settings($field){
         $acfe_flexible_category = isset($layout['acfe_flexible_category']) ? $layout['acfe_flexible_category'] : '';
 
         acf_render_field_wrap(array(
-            'prepend'       => __('Category'),
+            'prepend'       => __('Category', 'acfe'),
             'name'          => 'acfe_flexible_category',
             'type'          => 'text',
             'class'         => 'acf-fc-meta-name',
             'prefix'        => $layout_prefix,
             'value'         => $acfe_flexible_category,
-            'placeholder'   => __('Multiple categories can be set using "|"')
+            'placeholder'   => __('Multiple categories can be set using "|"', 'acfe')
             
             /*
             'conditional_logic' => array(
@@ -613,7 +613,7 @@ function acfe_flexible_layouts_settings($field){
         $acfe_flexible_render_template = isset($layout['acfe_flexible_render_template']) ? $layout['acfe_flexible_render_template'] : '';
         
         acf_render_field_wrap(array(
-            'label'         => __('Render'),
+            'label'         => __('Render', 'acfe'),
             'prepend'       => str_replace(home_url(), '', ACFE_THEME_URL) . '/',
             'name'          => 'acfe_flexible_render_template',
             'type'          => 'text',
@@ -694,7 +694,7 @@ function acfe_flexible_layouts_settings($field){
         $acfe_flexible_thumbnail = isset($layout['acfe_flexible_thumbnail']) ? $layout['acfe_flexible_thumbnail'] : '';
         
         acf_render_field_wrap(array(
-            'label'         => __('Thumbnail'),
+            'label'         => __('Thumbnail', 'acfe'),
             'name'          => 'acfe_flexible_thumbnail',
             'type'          => 'image',
             'class'         => '',
@@ -743,7 +743,7 @@ function acfe_flexible_layouts_settings($field){
         acf_enable_filters();
         
         acf_render_field_wrap(array(
-            'label'         => __('Configuration modal'),
+            'label'         => __('Configuration modal', 'acfe'),
             'name'          => 'acfe_flexible_settings',
             'type'          => 'select',
             'class'         => '',
@@ -1418,7 +1418,7 @@ class acfe_field_flexible_content extends acf_field_flexible_content{
         }
         
         // no value message
-        $no_value_message = __('Click the "%s" button below to start creating your layout','acf');
+        $no_value_message = __('Click the "%s" button below to start creating your layout','acfe');
         $no_value_message = apply_filters('acf/fields/flexible_content/no_value_message', $no_value_message, $field);
 
     ?>
@@ -1637,6 +1637,11 @@ class acfe_field_flexible_content extends acf_field_flexible_content{
         $this->col = acf_maybe_get($field, 'acfe_flexible_grid');
         $this->settings = acf_maybe_get($layout, 'acfe_flexible_settings');
         
+        // Remove actions
+        $this->remove_actions = apply_filters('acfe/flexible/remove_actions',                           $this->remove_actions, $field);
+        $this->remove_actions = apply_filters('acfe/flexible/remove_actions/name=' . $field['_name'],   $this->remove_actions, $field);
+        $this->remove_actions = apply_filters('acfe/flexible/remove_actions/key=' . $field['key'],      $this->remove_actions, $field);
+        
 		// vars
 		$sub_fields = $layout['sub_fields'];
 		$id = ($i === 'acfcloneindex') ? 'acfcloneindex' : "row-$i";
@@ -1766,7 +1771,7 @@ class acfe_field_flexible_content extends acf_field_flexible_content{
         
         $handle = array(
             'class'     => 'acf-fc-layout-handle',
-            'title'     => __('Drag to reorder','acf'),
+            'title'     => __('Drag to reorder','acfe'),
             'data-name' => 'collapse-layout',
         );
         
@@ -1790,9 +1795,9 @@ class acfe_field_flexible_content extends acf_field_flexible_content{
         
         // icons
         $icons = array(
-            'add'       => '<a class="acf-icon -plus small light acf-js-tooltip" href="#" data-name="add-layout" title="' . __('Add layout','acf') . '"></a>',
-            'remove'    => '<a class="acf-icon -minus small light acf-js-tooltip" href="#" data-name="remove-layout" title="' . __('Remove layout','acf') . '"></a>',
-            'collapse'  => '<a class="acf-icon -collapse small acf-js-tooltip" href="#" data-name="collapse-layout" title="' . __('Click to toggle','acf') . '"></a>'
+            'add'       => '<a class="acf-icon -plus small light acf-js-tooltip" href="#" data-name="add-layout" title="' . __('Add layout','acfe') . '"></a>',
+            'remove'    => '<a class="acf-icon -minus small light acf-js-tooltip" href="#" data-name="remove-layout" title="' . __('Remove layout','acfe') . '"></a>',
+            'collapse'  => '<a class="acf-icon -collapse small acf-js-tooltip" href="#" data-name="collapse-layout" title="' . __('Click to toggle','acfe') . '"></a>'
         );
         
         $icons = apply_filters('acfe/flexible/layouts/icons',                                                         $icons, $layout, $field);
@@ -2087,7 +2092,7 @@ class acfe_field_flexible_content extends acf_field_flexible_content{
             
             <?php if(!$modal_edition && $close_button){ ?>
             
-                <div class="acfe-flexible-opened-actions"><a href="javascript:void(0);" class="button"><?php _e('Close', 'acf'); ?></button></a></div>
+                <div class="acfe-flexible-opened-actions"><a href="javascript:void(0);" class="button"><?php _e('Close', 'acfe'); ?></button></a></div>
             
             <?php } ?>
                 

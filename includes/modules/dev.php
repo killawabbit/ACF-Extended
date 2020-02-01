@@ -79,13 +79,13 @@ class acfe_dev{
         
         if(!empty($this->wp_meta)){
             
-            add_meta_box('acfe-wp-custom-fields', 'WP Custom fields', array($this, 'wp_render_meta_box'), 'edit-term', 'normal', 'low');
+            add_meta_box('acfe-wp-custom-fields', __('WP Custom fields', 'acfe'), array($this, 'wp_render_meta_box'), 'edit-term', 'normal', 'low');
             
         }
         
         if(!empty($this->acf_meta)){
             
-            add_meta_box('acfe-acf-custom-fields', 'ACF Custom fields', array($this, 'acf_render_meta_box'), 'edit-term', 'normal', 'low');
+            add_meta_box('acfe-acf-custom-fields', __('ACF Custom fields', 'acfe'), array($this, 'acf_render_meta_box'), 'edit-term', 'normal', 'low');
             
         }
         
@@ -109,13 +109,13 @@ class acfe_dev{
         
         if(!empty($this->wp_meta)){
             
-            add_meta_box('acfe-wp-custom-fields', 'WP Custom fields', array($this, 'wp_render_meta_box'), 'edit-user', 'normal', 'low');
+            add_meta_box('acfe-wp-custom-fields', __('WP Custom fields', 'acfe'), array($this, 'wp_render_meta_box'), 'edit-user', 'normal', 'low');
             
         }
         
         if(!empty($this->acf_meta)){
             
-            add_meta_box('acfe-acf-custom-fields', 'ACF Custom fields', array($this, 'acf_render_meta_box'), 'edit-user', 'normal', 'low');
+            add_meta_box('acfe-acf-custom-fields', __('ACF Custom fields', 'acfe'), array($this, 'acf_render_meta_box'), 'edit-user', 'normal', 'low');
             
         }
         
@@ -231,7 +231,7 @@ class acfe_dev{
         
         if(!empty($this->wp_meta)){
             
-            add_meta_box('acfe-wp-custom-fields', 'WP Custom fields <span style="background: #72777c;padding: 1px 5px;border-radius: 4px;color: #fff;margin-left: 3px;font-size: 12px;">'.count($this->wp_meta).'</span>', array($this, 'wp_render_meta_box'), $post_type, 'normal', 'low');
+            add_meta_box('acfe-wp-custom-fields', __('WP Custom fields', 'acfe') . '<span style="background: #72777c;padding: 1px 5px;border-radius: 4px;color: #fff;margin-left: 3px;font-size: 12px;">'.count($this->wp_meta).'</span>', array($this, 'wp_render_meta_box'), $post_type, 'normal', 'low');
             
         }
         
@@ -284,9 +284,9 @@ class acfe_dev{
         
             <thead>
                 <tr>
-                    <th scope="col" style="width:30%;">Name</th>
-                    <th scope="col" style="width:auto;">Value</th>
-                    <th scope="col" style="width:120px;">Field group</a></th>
+                    <th scope="col" style="width:30%;"><?php echo __('Name', 'acfe') ?></th>
+                    <th scope="col" style="width:auto;"><?php echo __('Value', 'acfe') ?></th>
+                    <th scope="col" style="width:120px;"><?php echo __('Field group', 'acfe') ?></th>
                 </tr>
             </thead>
 
@@ -300,7 +300,7 @@ class acfe_dev{
                     
                     $field = $meta['field'];
                     $field_group = $meta['field_group'];
-                    $field_group_display = '<span style="color:#aaa;">' . __('Unknown', 'acf') . '</span>';
+                    $field_group_display = '<span style="color:#aaa;">' . __('Unknown', 'acfe') . '</span>';
                     
                     if($field_group){
                         

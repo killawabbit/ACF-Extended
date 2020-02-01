@@ -14,14 +14,14 @@ add_action('init', 'acfe_dop_register');
 function acfe_dop_register(){
     
     register_post_type('acfe-dop', array(
-        'label'                 => 'Options Page',
-        'description'           => 'Options Page',
+        'label'                 => __('Options Page', 'acfe'),
+        'description'           => __('Options Page', 'acfe'),
         'labels'                => array(
-            'name'          => 'Options Pages',
-            'singular_name' => 'Options Page',
-            'menu_name'     => 'Options Pages',
-            'edit_item'     => 'Edit Options Page',
-            'add_new_item'  => 'New Options Page',
+            'name'          => __('Options Pages', 'acfe'),
+            'singular_name' => __('Options Page', 'acfe'),
+            'menu_name'     => __('Options Pages', 'acfe'),
+            'edit_item'     => __('Edit Options Page', 'acfe'),
+            'add_new_item'  => __('New Options Page', 'acfe'),
         ),
         'supports'              => false,
         'hierarchical'          => true,
@@ -60,7 +60,7 @@ function acfe_dop_menu(){
     if(!acf_get_setting('show_admin'))
         return;
     
-    add_submenu_page('edit.php?post_type=acf-field-group', __('Options'), __('Options'), acf_get_setting('capability'), 'edit.php?post_type=acfe-dop');
+    add_submenu_page('edit.php?post_type=acf-field-group', __('Options', 'acfe'), __('Options', 'acfe'), acf_get_setting('capability'), 'edit.php?post_type=acfe-dop');
     
 }
 
@@ -376,9 +376,9 @@ function acfe_dop_admin_columns($columns){
     if(isset($columns['date']))
         unset($columns['date']);
     
-    $columns['name'] = __('Name');
-    $columns['post_id'] = __('Post ID');
-    $columns['autoload'] = __('Autoload');
+    $columns['name'] = __('Name', 'acfe');
+    $columns['post_id'] = __('Post ID', 'acfe');
+    $columns['autoload'] = __('Autoload', 'acfe');
     
     return $columns;
     
@@ -435,8 +435,8 @@ function acfe_dop_admin_row($actions, $post){
     
     $name = get_field('acfe_dop_name', $post->ID);
     
-    $actions['acfe_dop_export_php'] = '<a href="' . admin_url('edit.php?post_type=acf-field-group&page=acf-tools&tool=acfe_tool_dop_export&action=php&keys=' . $name) . '">' . __('PHP') . '</a>';
-    $actions['acfe_dop_export_json'] = '<a href="' . admin_url('edit.php?post_type=acf-field-group&page=acf-tools&tool=acfe_tool_dop_export&action=json&keys=' . $name) . '">' . __('Json') . '</a>';
+    $actions['acfe_dop_export_php'] = '<a href="' . admin_url('edit.php?post_type=acf-field-group&page=acf-tools&tool=acfe_tool_dop_export&action=php&keys=' . $name) . '">' . __('PHP', 'acfe') . '</a>';
+    $actions['acfe_dop_export_json'] = '<a href="' . admin_url('edit.php?post_type=acf-field-group&page=acf-tools&tool=acfe_tool_dop_export&action=json&keys=' . $name) . '">' . __('Json', 'acfe') . '</a>';
     
     return $actions;
     
@@ -510,10 +510,10 @@ acf_add_local_field_group(array(
     ),
     
     'menu_order' => 0,
-    'position' => 'normal',
-    'style' => 'default',
-    'label_placement' => 'left',
-    'instruction_placement' => 'label',
+    'position' => __('normal', 'acfe'),
+    'style' => __('default', 'acfe'),
+    'label_placement' => __('left', 'acfe'),
+    'instruction_placement' => __('label', 'acfe'),
     'hide_on_screen' => '',
     'active' => 1,
     'description' => '',
@@ -521,10 +521,10 @@ acf_add_local_field_group(array(
     'fields' => array(
         array(
             'key' => 'field_acfe_dop_page_title',
-            'label' => 'Page title',
+            'label' => __('Page title', 'acfe'),
             'name' => 'page_title',
             'type' => 'text',
-            'instructions' => '(string) The title displayed on the options page. Required.',
+            'instructions' => __('(string) The title displayed on the options page. Required.', 'acfe'),
             'required' => 1,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -543,10 +543,10 @@ acf_add_local_field_group(array(
         ),
         array(
             'key' => 'field_acfe_dop_name',
-            'label' => 'Name',
+            'label' => __('Name', 'acfe'),
             'name' => 'acfe_dop_name',
             'type' => 'acfe_slug',
-            'instructions' => '(string) Options page slug. Must be unique',
+            'instructions' => __('(string) Options page slug. Must be unique', 'acfe'),
             'required' => 1,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -565,10 +565,10 @@ acf_add_local_field_group(array(
         ),
         array(
             'key' => 'field_acfe_dop_menu_title',
-            'label' => 'Menu title',
+            'label' => __('Menu title', 'acfe'),
             'name' => 'menu_title',
             'type' => 'text',
-            'instructions' => '(string) The title displayed in the wp-admin sidebar. Defaults to page_title',
+            'instructions' => __('(string) The title displayed in the wp-admin sidebar. Defaults to page_title', 'acfe'),
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -587,10 +587,10 @@ acf_add_local_field_group(array(
         ),
         array(
             'key' => 'field_acfe_dop_menu_slug',
-            'label' => 'Menu slug',
+            'label' => __('Menu slug', 'acfe'),
             'name' => 'menu_slug',
             'type' => 'acfe_slug',
-            'instructions' => '(string) The URL slug used to uniquely identify this options page. Defaults to a url friendly version of menu_title',
+            'instructions' => __('(string) The URL slug used to uniquely identify this options page. Defaults to a url friendly version of menu_title', 'acfe'),
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -613,12 +613,12 @@ acf_add_local_field_group(array(
         ),
         array(
             'key' => 'field_acfe_dop_capability',
-            'label' => 'Capability',
+            'label' => __('Capability', 'acfe'),
             'name' => 'capability',
             'type' => 'text',
-            'instructions' => '(string) The capability required for this menu to be displayed to the user. Defaults to edit_posts.<br /><br />
+            'instructions' => __('(string) The capability required for this menu to be displayed to the user. Defaults to edit_posts.<br /><br />
 
-Read more about capability here: <a href="https://codex.wordpress.org/Roles_and_Capabilities">https://codex.wordpress.org/Roles_and_Capabilities</a>',
+Read more about capability here: <a href="https://codex.wordpress.org/Roles_and_Capabilities">https://codex.wordpress.org/Roles_and_Capabilities</a>', 'acfe'),
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -637,13 +637,13 @@ Read more about capability here: <a href="https://codex.wordpress.org/Roles_and_
         ),
         array(
             'key' => 'field_acfe_dop_position',
-            'label' => 'Position',
+            'label' => __('Position', 'acfe'),
             'name' => 'position',
             'type' => 'text',
-            'instructions' => '(int|string) The position in the menu order this menu should appear. Defaults to bottom of utility menu items.<br /><br />
+            'instructions' => __('(int|string) The position in the menu order this menu should appear. Defaults to bottom of utility menu items.<br /><br />
 
 WARNING: if two menu items use the same position attribute, one of the items may be overwritten so that only one item displays!<br />
-Risk of conflict can be reduced by using decimal instead of integer values, e.g. \'63.3\' instead of 63 (must use quotes).',
+Risk of conflict can be reduced by using decimal instead of integer values, e.g. \'63.3\' instead of 63 (must use quotes).', 'acfe'),
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -662,10 +662,10 @@ Risk of conflict can be reduced by using decimal instead of integer values, e.g.
         ),
         array(
             'key' => 'field_acfe_dop_parent_slug',
-            'label' => 'Parent slug',
+            'label' => __('Parent slug', 'acfe'),
             'name' => 'parent_slug',
             'type' => 'text',
-            'instructions' => '(string) The slug of another WP admin page. if set, this will become a child page.',
+            'instructions' => __('(string) The slug of another WP admin page. if set, this will become a child page.', 'acfe'),
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -684,11 +684,11 @@ Risk of conflict can be reduced by using decimal instead of integer values, e.g.
         ),
         array(
             'key' => 'field_acfe_dop_icon_url',
-            'label' => 'Icon url',
+            'label' => __('Icon url', 'acfe'),
             'name' => 'icon_url',
             'type' => 'text',
-            'instructions' => '(string) The icon class for this menu. Defaults to default WordPress gear.<br /><br />
-Read more about dashicons here: <a href="https://developer.wordpress.org/resource/dashicons/">https://developer.wordpress.org/resource/dashicons/</a>',
+            'instructions' => __('(string) The icon class for this menu. Defaults to default WordPress gear.<br /><br />
+Read more about dashicons here: <a href="https://developer.wordpress.org/resource/dashicons/">https://developer.wordpress.org/resource/dashicons/</a>', 'acfe'),
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -707,11 +707,11 @@ Read more about dashicons here: <a href="https://developer.wordpress.org/resourc
         ),
         array(
             'key' => 'field_acfe_dop_redirect',
-            'label' => 'Redirect',
+            'label' => __('Redirect', 'acfe'),
             'name' => 'redirect',
             'type' => 'true_false',
-            'instructions' => '(boolean) If set to true, this options page will redirect to the first child page (if a child page exists). 
-If set to false, this parent page will appear alongside any child pages. Defaults to true',
+            'instructions' => __('(boolean) If set to true, this options page will redirect to the first child page (if a child page exists). 
+If set to false, this parent page will appear alongside any child pages. Defaults to true', 'acfe'),
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -725,16 +725,15 @@ If set to false, this parent page will appear alongside any child pages. Default
             'message' => '',
             'default_value' => 1,
             'ui' => 1,
-            'ui_on_text' => 'True',
-            'ui_off_text' => 'False',
+            'ui_on_text' => __('True', 'acfe'),
+            'ui_off_text' => __('False', 'acfe'),
         ),
         array(
             'key' => 'field_acfe_dop_post_id',
-            'label' => 'Post ID',
+            'label' => __('Post ID', 'acfe'),
             'name' => 'post_id',
             'type' => 'text',
-            'instructions' => '(int|string) The \'$post_id\' to save/load data to/from. Can be set to a numeric post ID (123), or a string (\'user_2\'). 
-Defaults to \'options\'.',
+            'instructions' => __('(int|string) The \'$post_id\' to save/load data to/from. Can be set to a numeric post ID (123), or a string (\'user_2\'). Defaults to \'options\'.', 'acfe'),
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -745,7 +744,7 @@ Defaults to \'options\'.',
             'acfe_validate' => '',
             'acfe_update' => '',
             'acfe_permissions' => '',
-            'default_value' => 'options',
+            'default_value' => __('options', 'acfe'),
             'placeholder' => '',
             'prepend' => '',
             'append' => '',
@@ -753,11 +752,11 @@ Defaults to \'options\'.',
         ),
         array(
             'key' => 'field_acfe_dop_autoload',
-            'label' => 'Autoload',
+            'label' => __('Autoload', 'acfe'),
             'name' => 'autoload',
             'type' => 'true_false',
-            'instructions' => '(boolean)	Whether to load the option (values saved from this options page) when WordPress starts up.
-Defaults to false.',
+            'instructions' => __('(boolean)    Whether to load the option (values saved from this options page) when WordPress starts up.
+Defaults to false.', 'acfe'),
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -771,15 +770,15 @@ Defaults to false.',
             'message' => '',
             'default_value' => 0,
             'ui' => 1,
-            'ui_on_text' => 'True',
-            'ui_off_text' => 'False',
+            'ui_on_text' => __('True', 'acfe'),
+            'ui_off_text' => __('False', 'acfe'),
         ),
         array(
             'key' => 'field_acfe_dop_update_button',
-            'label' => 'Update button',
+            'label' => __('Update button', 'acfe'),
             'name' => 'update_button',
             'type' => 'text',
-            'instructions' => '(string) The update button text.',
+            'instructions' => __('(string) The update button text.', 'acfe'),
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -790,7 +789,7 @@ Defaults to false.',
             'acfe_validate' => '',
             'acfe_update' => '',
             'acfe_permissions' => '',
-            'default_value' => 'Update',
+            'default_value' => __('Update', 'acfe'),
             'placeholder' => '',
             'prepend' => '',
             'append' => '',
@@ -798,10 +797,10 @@ Defaults to false.',
         ),
         array(
             'key' => 'field_acfe_dop_updated_message',
-            'label' => 'Updated Message',
+            'label' => __('Updated Message', 'acfe'),
             'name' => 'updated_message',
             'type' => 'text',
-            'instructions' => '(string) The message shown above the form on submit.',
+            'instructions' => __('(string) The message shown above the form on submit.', 'acfe'),
             'required' => 0,
             'conditional_logic' => 0,
             'wrapper' => array(
@@ -812,7 +811,7 @@ Defaults to false.',
             'acfe_validate' => '',
             'acfe_update' => '',
             'acfe_permissions' => '',
-            'default_value' => 'Options Updated',
+            'default_value' => __('Options Updated','acfe'),
             'placeholder' => '',
             'prepend' => '',
             'append' => '',
